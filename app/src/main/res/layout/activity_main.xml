@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mediumPurple"
+        tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInputTimeOperand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMain"
+        app:layout_constraintVertical_bias="0.1"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/firstOperandTimeET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8pt"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/secondOperandTimeET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8pt"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutChoiceTimeOperator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8pt"
+        android:layout_marginRight="8pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutInputTimeOperand"
+        app:layout_constraintVertical_bias="0.1">
+
+        <Button
+            android:id="@+id/buttonTotalTimeBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#008000"
+            android:onClick="onButtonClick"
+            android:text="+"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/buttonDifTimeBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#008000"
+            android:text="-"
+            android:textSize="22sp"
+            android:onClick="onButtonClick"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultTimeTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Результат"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutChoiceTimeOperator"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
